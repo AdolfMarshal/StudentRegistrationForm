@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Form1</title>
+  <style>
+    body {
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ff0000;
+      width: 100%;
+      padding: 20px;
+    }
+
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ffffff;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .checkbox-label img {
+      width: 200px;
+      height: 100px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    #user-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      display: none;
+    }
+
+    #upload-section {
+      display: flex;
+      align-items: center;
+    }
+
+    #upload-section input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="rain2.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <h2>Student Registration Form</h2>
+
+  <form>
+    <table>
+      <tr>
+        <td><legend>Personal Information</legend></td>
+        <td>
+          <div id="upload-section">
+            <img id="user-image" alt="User Image">
+            <label for="image-upload" style="cursor: pointer; color: #ff0000; margin-left: 10px;">Add Image</label>
+            <input type="file" id="image-upload" accept="image/*">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="name">Name:</label></td>
+        <td><input type="text" id="name" name="name" required></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="phone">Phone:</label></td>
+        <td><input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required></td>
+      </tr>
+      <tr>
+        <td><label for="birthdate">Date of Birth:</label></td>
+        <td><input type="date" id="birthdate" name="birthdate" required></td>
+      </tr>
+      
+      <tr>
+        <td><legend>Address</legend></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><label for="address">Street Address:</label></td>
+        <td><input type="text" id="address" name="address" required></td>
+      </tr>
+      <tr>
+        <td><label for="city">City:</label></td>
+        <td><input type="text" id="city" name="city" required></td>
+      </tr>
+      <tr>
+        <td><label for="state">State:</label></td>
+        <td><input type="text" id="state" name="state" required></td>
+      </tr>
+      <tr>
+        <td><label for="zipcode">Zip Code:</label></td>
+        <td><input type="number" id="zipcode" name="zipcode" pattern="[0-9]{5}" required></td>
+      </tr>
+
+      <tr>
+        <td><legend>Choose Current Course</legend></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><label for="MCA" class="checkbox-label">
+          MCA:
+          <img src="https://www.bhphotovideo.com/images/images2500x2500/Acer_PV_SE002_007_Aspire_AM3400_B2082_Desktop_Computer_736195.jpg" alt="MCA Icon">
+        </label></td>
+        <td><input type="radio" id="MCA" name="course" value="MCA"></td>
+      </tr>
+      <tr>
+        <td><label for="BCA" class="checkbox-label">
+          BCA:
+          <img src="https://www.bhphotovideo.com/images/images2500x2500/Acer_PV_SE002_007_Aspire_AM3400_B2082_Desktop_Computer_736195.jpg" alt="BCA Icon">
+        </label></td>
+        <td><input type="radio" id="BCA" name="course" value="BCA"></td>
+      </tr>
+      <tr>
+        <td><label for="BCOM" class="checkbox-label">
+          BCOM:
+          <img src="https://tse1.explicit.bing.net/th?id=OIP.q9VPUUA5iZT2bYOeJ3yX8wHaEK&pid=Api&P=0&h=220" alt="BCOM Icon">
+        </label></td>
+        <td><input type="radio" id="BCOM" name="course" value="BCOM"></td>
+      </tr>
+      <tr>
+        <td><label for="MCOM" class="checkbox-label">
+          MCOM:
+          <img src="https://tse1.explicit.bing.net/th?id=OIP.q9VPUUA5iZT2bYOeJ3yX8wHaEK&pid=Api&P=0&h=220" alt="MCOM Icon">
+        </label></td>
+        <td><input type="radio" id="MCOM" name="course" value="MCOM"></td>
+      </tr>
+
+      <tr>
+        <td><legend>Other Curricular Interests</legend></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><label for="sports" class="checkbox-label">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.mQaP4mW6f1neq_2HHDJpYQHaEQ&pid=Api&P=0&h=180" alt="Sports Icon">
+          Sports:
+        </label></td>
+        <td><input type="checkbox" id="sports" name="interests" value="sports"></td>
+      </tr>
+      <tr>
+        <td><label for="music" class="checkbox-label">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.97SLxvmNS2ASFeQLYfcW1wHaDZ&pid=Api&P=0&h=180" alt="Music Icon">
+          Music:
+        </label></td>
+        <td><input type="checkbox" id="music" name="interests" value="music"></td>
+      </tr>
+      <tr>
+        <td><label for="books" class="checkbox-label">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.kcXeXV-XoC39JhSnm3j7WQHaE8&pid=Api&P=0&h=180" alt="Books Icon">
+          Books:
+        </label></td>
+        <td><input type="checkbox" id="books" name="interests" value="books"></td>
+      </tr>
+      <tr>
+        <td><label for="movies" class="checkbox-label">
+          <img src="http://www.pixelstalk.net/wp-content/uploads/2016/03/One-Piece-Wallpaper-HD-Free-Download.jpg" alt="Movies Icon">
+          Movies:
+        </label></td>
+        <td><input type="checkbox" id="movies" name="interests" value="movies"></td>
+      </tr>
+
+      <tr>
+        <td><legend>Preferred Color</legend></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="radio" id="color-red" name="color" value="red"></td>
+        <td><label for="color-red">Red</label></td>
+      </tr>
+      <tr>
+        <td><input type="radio" id="color-green" name="color" value="green"></td>
+        <td><label for="color-green">Green</label></td>
+      </tr>
+      <tr>
+        <td><input type="radio" id="color-blue" name="color" value="blue"></td>
+        <td><label for="color-blue">Blue</label></td>
+      </tr>
+      <tr>
+        <td><input type="radio" id="color-yellow" name="color" value="yellow"></td>
+        <td><label for="color-yellow">Yellow</label></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><input type="submit" value="Submit"></td>
+      </tr>
+    </table>
+  </form>
+
+  <h2>Summary of Submitted Information</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+    <tr>
+      <td id="summary-name"></td>
+      <td id="summary-email"></td>
+      <td id="summary-phone"></td>
+    </tr>
+  </table>
+
+  <h2>User Image</h2>
+  <img id="summary-user-image" style="width:150px; height:150px; object-fit: cover; display:none;" alt="User Image">
+
+  <h2>Current Course</h2>
+
+  <div id="course-summary">
+    <p id="course-name"></p>
+    <img id="course-image" src="" alt="Course Image" style="display:none;">
+  </div>
+
+  <h2>Interests</h2>
+
+  <ul id="interests-summary">
+    <li></li>
+  </ul>
+
+  <script>
+    const form = document.querySelector('form');
+    const summaryName = document.getElementById('summary-name');
+    const summaryEmail = document.getElementById('summary-email');
+    const summaryPhone = document.getElementById('summary-phone');
+    const summaryUserImage = document.getElementById('summary-user-image');
+    const interestsSummary = document.getElementById('interests-summary');
+    const courseName = document.getElementById('course-name');
+    const courseImage = document.getElementById('course-image');
+    const userImage = document.getElementById('user-image');
+    const imageUpload = document.getElementById('image-upload');
+
+    imageUpload.addEventListener('change', function() {
+      const file = imageUpload.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          userImage.src = e.target.result;
+          userImage.style.display = 'block';
+          summaryUserImage.src = e.target.result;
+          summaryUserImage.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      summaryName.textContent = form.name.value;
+      summaryEmail.textContent = form.email.value;
+      summaryPhone.textContent = form.phone.value;
+
+      // Course Summary
+      const selectedCourse = form.querySelector('input[name="course"]:checked');
+      if (selectedCourse) {
+        courseName.textContent = selectedCourse.value;
+        courseImage.src = selectedCourse.previousElementSibling.querySelector('img').src;
+        courseImage.style.display = 'block';
+      }
+
+      // Interests Summary
+      interestsSummary.innerHTML = '';
+      const interests = form.querySelectorAll('input[name="interests"]:checked');
+      interests.forEach(function(interest) {
+        const li = document.createElement('li');
+        li.textContent = interest.value;
+        interestsSummary.appendChild(li);
+      });
+
+      // Display user image in summary
+      if (userImage.src) {
+        summaryUserImage.src = userImage.src;
+        summaryUserImage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
